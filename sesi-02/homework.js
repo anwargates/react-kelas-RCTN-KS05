@@ -61,6 +61,6 @@ const videoData = [
     }
 ]
 
-let videoDataFilter = videoData.filter((video) => video.present == false)
+let videoDataFilter = videoData.filter((video) => video.present == true)
 console.log(videoDataFilter)
 let videoDataMap = videoData.map((video)=>console.log(video))
