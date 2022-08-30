@@ -1,0 +1,16 @@
+{
+  "name": "hello-nodemon",
+  "version": "1.0.0",
+  "description": "belajar js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
+}
