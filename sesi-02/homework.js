@@ -64,3 +64,18 @@ const videoData = [
 let videoDataFilter = videoData.filter((video) => video.present == true)
 console.log(videoDataFilter)
 let videoDataMap = videoData.map((video)=>console.log(video))
+
+const dataFilter = videoDataFilter.map((data)=>{
+    let name = data.name.toString()
+    let present = data.present.toString()
+    let rooms = data.rooms
+
+    let room = {
+        nama: name,
+        present: present,
+        rooms: rooms,
+    }
+    console.log(room)
+})
+
+// console.log(dataFilter)

@@ -5,7 +5,7 @@ const complicatedArray = ['cucumber', 44, true]
 const makeAllCaps = (array) => {
     return new Promise((resolve, reject) => {
         if (array.every(i => typeof i === "string")) {
-            resolve(array.map(element => element.toUpperCase())) // resolve apabile semua value dalam array berbentuk string
+            resolve(array.map(element => element.toUpperCase())) // resolve apabile semua value dalam array berbentuk string, bisa ditambahkan toString()
         } else {
             reject('error: array tidak semua berisi string') // reject apabila tidak semua array berbentuk string
         }
