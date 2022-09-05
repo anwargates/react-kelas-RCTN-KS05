@@ -2,24 +2,39 @@ import React from 'react'
 
 function Header() {
     return (
-        <div>
-            <div className="section-header">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-4">
-                            <img className='profile-picture' src="/profile.jpg" alt="" />
-                        </div>
-                        <div className="col-4">
-                            <h2 className="">Hacktiv8 Meetup</h2>
-                            <p className="">Location: Jakarta, Indonesia</p>
-                            <p className="">Members: 1,078</p>
-                            <p className="">Organizers: Adhy Wiranata</p>
-                            <button type='button' className="btn btn-primary">Join Us</button>
-                        </div>
+            <section className="section-header">
+                <div className="container d-flex flex-column align-items-center gap-3">
+                    <div className="">
+                        <img className='profile-picture' src="/profile.jpg" alt="" />
+                    </div>
+                    <div className="header-caption">
+                    <h1 className="">Hacktiv8 Meetup</h1>
+                        <table className='header-table my-3'>
+                            <tr>
+                                <td>Location</td>
+                                <td className='px-2'>:</td>
+                                <td>Jakarta, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>Members</td>
+                                <td className='px-2'>:</td>
+                                <td>1,078</td>
+                            </tr>
+                            <tr>
+                                <td>Organizers</td>
+                                <td className='px-2'>:</td>
+                                <td>Adhy Wiranata</td>
+                            </tr>
+                        </table>
+                        <button type='button' className="btn header-button">Join Us</button>
+{/*                         
+                        <p className="">Location: Jakarta, Indonesia</p>
+                        <p className="">Members: 1,078</p>
+                        <p className="">Organizers: Adhy Wiranata</p> */}
+                        
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
     )
 }
 

@@ -2,10 +2,10 @@ import React from 'react'
 
 function NextMeetup() {
     return (
-        <div className='container'>
-            <h2>Next Meetup</h2>
-            <div className="container-inner">
-                <div className="row section-next-meeting">
+        <section className='section-next-meetup'>
+            <div className='container d-flex flex-column align-items-center gap-3'>
+                <h1>Next Meetup</h1>
+                <div className="row section-next-meetup">
                     <h3>Awesome meetup and event</h3>
                     <p className="date">25 January 2019</p>
                     <p>Hello, Javascript and Node.js ninjas!</p>
@@ -20,7 +20,7 @@ function NextMeetup() {
                     <p>Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers</p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
