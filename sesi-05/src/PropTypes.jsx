@@ -16,7 +16,7 @@ export default class Hero extends React.Component {
     constructor() {
         super()
         this.state = {
-            name: "this is a string"
+            name: "Gatotkaca"
         }
     }
 
