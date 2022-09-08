@@ -1,10 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends React.Component {
+  //build state untuk item navigasi
   constructor(props) {
     super(props);
     this.state = {
-      navItem: ["Create Meetup", "Explore", "Others"],
+      navItem: [
+        {
+          id: 1,
+          page: "Create Meetup",
+          to: "/create-meetup",
+        },
+        {
+          id: 2,
+          page: "Explore",
+          to: "/explore",
+        },
+        {
+          id: 3,
+          page: "Others",
+          to: "/others",
+        },
+      ],
     };
   }
 
@@ -13,7 +31,7 @@ export default class Navbar extends React.Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container">
-            <a className="navbar-brand">QTemu</a>
+            <Link to="/" className="navbar-brand">QTemu</Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -27,14 +45,19 @@ export default class Navbar extends React.Component {
             </button>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                {/* mengirim props */}
                 {this.state.navItem.map((val) => (
-                  <li key={val.toString()} className="nav-item">
-                    <a
-                      className={`nav-link ${val == this.props.page ? "active" : ""}`}
-                      href="#"
+                  <li key={val.id.toString()} className="nav-item">
+                    <Link
+                    // menambahkan class sesuai state
+                      className={`nav-link ${
+                        val.page == this.props.page ? "active" : ""
+                      }`}
+                      to={val.to}
                     >
-                      {val}
-                    </a>
+                      {console.log(val)}
+                      {val.page}
+                    </Link>
                   </li>
                 ))}
               </ul>

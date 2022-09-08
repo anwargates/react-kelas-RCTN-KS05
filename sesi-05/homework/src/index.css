@@ -84,7 +84,7 @@ section {
   background-color: var(--two);
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 1px 3px #888888;
+  box-shadow: 3px 3px #88888875;
   color: var(--four);
 }
 
@@ -95,6 +95,7 @@ section {
 .card {
   width: 18rem;
   min-height: 18rem;
+  box-shadow: 3px 3px #88888869;
 }
 
 .card-body{
