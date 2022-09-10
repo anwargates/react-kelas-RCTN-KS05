@@ -12,7 +12,6 @@ function Header() {
 function Content() {
   return (
     <div className="content">
-      <p>Silakan isikan dengan paragraf yang kamu kehendaki</p>
       <CurrencyTable/>
     </div>
   )
