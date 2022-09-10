@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Stateless component
-export default const Movie = () => {
+const Movie = () => {
 
   return (
     <div>
@@ -11,3 +11,5 @@ export default const Movie = () => {
     </div>
   )
 }
+
+export default Movie;
