@@ -74,7 +74,7 @@ function CurrencyTable() {
   return (
     <>
       {/* {console.log(state)} */}
-      {console.log(currency.state)}
+      {/* {console.log(currency.state)} */}
       {console.log(state)}
       {/* {console.log(currency.getStateArray())} */}
 
