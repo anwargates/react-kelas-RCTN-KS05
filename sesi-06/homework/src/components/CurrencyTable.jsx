@@ -3,12 +3,15 @@ import CurrencyList from "./CurrencyList";
 import ExchangeRates from "./ExchangeRates";
 
 function fivePercent(exc) {
-  let buy = exc * 0.05 + exc;
-  let sell = exc - exc * 0.05;
+  let excNum = parseFloat(exc);
+  // console.log(excNum);
+  let buy = excNum * 0.05 + excNum;
+  let sell = excNum - excNum * 0.05;
   let res = {
     buy: buy,
     sell: sell,
   };
+  // console.log(res);
   return res;
 }
 
@@ -18,9 +21,10 @@ function CurrencyTable() {
   const API_KEY = "0b60f0b4714045e88e359d451481ce44";
   const TARGET_CURRENCIES = String(currencyList.state.currency);
   // const [selectedCurrency, setSelectedCurrency] = useState(0);
-  // const [state, setState] = useState(0);
+  const [state, setState] = useState([]);
 
   console.log(TARGET_CURRENCIES);
+  console.log(currencyList.state.currency);
 
   useEffect(() => {
     fetch(
@@ -29,14 +33,39 @@ function CurrencyTable() {
       .then((res) => res.json())
       .then((data) => {
         // setSelectedCurrency(data.rates);
-        Object.keys(data.rates).map((key) =>
-          currency.state.push({
-            name: key,
-            buy: fivePercent(data.rates[key]).buy.toString(),
-            exch: data.rates[key],
-            sell: fivePercent(data.rates[key]).sell.toString(),
-          })
-        );
+        Object.keys(data.rates).map((key) => {
+          setState((prev) => [
+            ...prev,
+            {
+              name: key,
+              buy: Number(fivePercent(data.rates[key]).buy).toFixed(4),
+              exch: Number(data.rates[key]).toFixed(4),
+              sell: Number(fivePercent(data.rates[key]).sell).toFixed(4),
+            },
+          ]);
+          // currency.addData(state)
+          // console.log(state)
+          // return currency.addData(
+          //   key,
+          //   fivePercent(data.rates[key]).buy.toString(),
+          //   data.rates[key],
+          //   fivePercent(data.rates[key]).sell.toString()
+          // );
+          // currency.state.push({
+          //   name: key,
+          //   buy: fivePercent(data.rates[key]).buy.toString(),
+          //   exch: data.rates[key],
+          //   sell: fivePercent(data.rates[key]).sell.toString(),
+          // });
+          // currency.setState((state) => {
+          //   state.push({
+          //     name: key,
+          //     buy: fivePercent(data.rates[key]).buy.toString(),
+          //     exch: data.rates[key],
+          //     sell: fivePercent(data.rates[key]).sell.toString(),
+          //   });
+          // });
+        });
         // console.log(data.rates);
       })
       .catch((err) => console.log(err));
@@ -44,7 +73,14 @@ function CurrencyTable() {
 
   return (
     <>
+      {/* {console.log(state)} */}
       {console.log(currency.state)}
+      {console.log(state)}
+      {/* {console.log(currency.getStateArray())} */}
+
+      {/* {console.log(currency.state)}
+      {console.log(currency.state.forEach(val=>val.name))}
+      {console.log(Object.keys(currency.state).map(val=>val))} */}
       <table className="table">
         <thead>
           <tr>
@@ -55,24 +91,23 @@ function CurrencyTable() {
           </tr>
         </thead>
         <tbody>
-          {/* {Object.keys(selectedCurrency).map((key, id) => (
+          {/* {Object.keys(currency.state).map((key, id) => (
               <tr key={id}>
-                <td>{key}</td>
-                <td>1</td>
-                <td>{selectedCurrency[key]}</td>
+                {console.log(key)}
+                <td>{currency.state[key]}</td>
+                <td>{currency.state[key]}</td>
+                <td>{currency.state[key]}</td>
                 <td>1</td>
               </tr>
             ))} */}
-          {currency.state.map((val, i) => (
-            <>
-              {console.log(val)}
-              <tr key={i}>
-                <td>{val.name}</td>
-                <td>{val.buy}</td>
-                <td>{val.exch}</td>
-                <td>{val.sell}</td>
-              </tr>
-            </>
+          {state.map((val, id) => (
+            <tr key={id}>
+              {console.log(val, id)}
+              <td>{val.name}</td>
+              <td>{val.buy}</td>
+              <td>{val.exch}</td>
+              <td>{val.sell}</td>
+            </tr>
           ))}
         </tbody>
       </table>
