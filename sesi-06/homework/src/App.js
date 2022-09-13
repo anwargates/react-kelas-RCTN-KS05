@@ -1,4 +1,5 @@
-import CurrencyTable from "./components/CurrencyTable";
+import CurrencyTableFunction from "./components/using-function/CurrencyTable";
+import CurrencyTableClass from "./components/using-class/CurrencyTable";
 
 // pembuatan stateless component
 function Header() {
@@ -12,7 +13,10 @@ function Header() {
 function Content() {
   return (
     <div className="content">
-      <CurrencyTable/>
+      <h1>Table Using Class</h1>
+      <CurrencyTableClass/>
+      <h1>Table Using Function</h1>
+      <CurrencyTableFunction/>
     </div>
   )
 }
