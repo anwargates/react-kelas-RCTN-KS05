@@ -1,5 +1,5 @@
 const divStyle = {
-  backgroundColor: "#eeeeee",
+  backgroundColor: "#45b366",
   padding: "30px",
   fontFamily: "Arial",
 };

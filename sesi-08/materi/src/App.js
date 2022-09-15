@@ -13,7 +13,7 @@ const divStyle = {
 
 // styled components
 const Div = styled.div`
-  background-color: #eeeeee;
+  background-color: #4e6cb7;
   padding: 30px;
   font-family: "Arial";
 `;

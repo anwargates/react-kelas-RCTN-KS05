@@ -42,19 +42,19 @@ export default function Content() {
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
-              <div className="modal-body">This is my first modal box</div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Save Changes
-                </button>
-              </div>
+            </div>
+            <div className="modal-body">This is my first modal box</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" className="btn btn-primary">
+                Save Changes
+              </button>
             </div>
           </div>
         </div>
