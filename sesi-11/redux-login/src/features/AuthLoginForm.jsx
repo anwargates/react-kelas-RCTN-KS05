@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { authLoginAPI } from "./users/authSlice";
+import { authLoginAPI } from "./slice/authSlice";
 
 function AuthLoginForm() {
   const authState = useSelector((state) => state.auth);
