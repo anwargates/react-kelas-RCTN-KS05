@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
-      <nav className="py-2 bg-light border-bottom">
+      {/* <nav className="py-2 bg-light border-bottom">
         <div className="container d-flex flex-wrap">
           <ul className="nav me-auto">
             <li className="nav-item">
@@ -43,15 +44,26 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> */}
       <header className="py-3 mb-4 border-bottom">
         <div className="container d-flex flex-wrap justify-content-center">
-          <a
-            href=""
+          <Link
             className="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none"
           >
-            <span className="fs-4">My First React App</span>
-          </a>
+            <span className="fs-4">Testing Example</span>
+          </Link>
+          <Link
+            to={"/"}
+            className="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none"
+          >
+            <span className="fs-4">Home</span>
+          </Link>
+          <Link
+            to={"/about"}
+            className="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none"
+          >
+            <span className="fs-4">About</span>
+          </Link>
           <form className="col-12 col-lg-auto mb-3 mb-lg-0">
             <input
               type="search"

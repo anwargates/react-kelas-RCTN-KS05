@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchUsers } from "./users/usersSlice";
 
 
@@ -14,6 +15,11 @@ const UsersList = () => {
   return (
     <div className="container">
       <h1>Users Data</h1>
+      <Link to="/">
+        <button className="btn btn-info" type="button">
+          Back to Home
+        </button>
+      </Link>
       <button className="btn btn-primary" onClick={doFetchUsers}>
         Get Users
       </button>
