@@ -1,3 +1,6 @@
+# Running menggunakan expo go
+# Running menggunakan avd
+
 1. install expo
 2. npm install -g eas-cli
 3. npm install -g sharp-cli
